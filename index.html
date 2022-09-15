@@ -6,21 +6,41 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>WAD2 Github Page :)</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+    <link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
+    <style>
+        .rotate {
+            animation: rotation 20s infinite linear;
+        }
+
+        @keyframes rotation {
+        from {
+            transform: rotate(0deg);
+        }
+        to {
+            transform: rotate(359deg);
+        }
+        }
+    </style>
 </head>
 
 <body style="background-color:azure">
     <div style="text-align:-webkit-center">
-        <img src=" static/dp.jpg" />
+        <img class="rotate" src=" static/dp.jpg" />
         <div
             style="border: 5px solid black; width: 40%; margin:15px 0px; text-align:center; border-radius: 20px; background-color:white;">
             <h1> Hello I'm Sebastian </h1>
             <p>I am a year 2 student at SMU pursuing a degree in information systems :)</p>
+            <button class="btn btn-dark mb-2" onclick="location.href='https://www.linkedin.com/in/sebastian-ong/'">
+                connect w/ me :-)
+            </button>
         </div>
         <iframe width="560" height="315" src="https://www.youtube.com/embed/hIJYIHP2vmg?autoplay=1&mute=1"
             title="YouTube video player" frameborder="0"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
             allowfullscreen></iframe>
     </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8" crossorigin="anonymous"></script>
 </body>
 
 </html>
