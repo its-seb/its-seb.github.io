@@ -1,65 +1,317 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>WAD2 Github Page :)</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
-    <link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT"
+      crossorigin="anonymous"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Poppins"
+      rel="stylesheet"
+    />
     <style>
-        .rotate {
-            animation: rotation 20s infinite linear;
-            display: block;
-            margin: auto;
-        }
+      * {
+        font-family: Poppins;
+      }
+      :root {
+        /* Set neon color */
+        --neon-text-color: #f40;
+        --neon-border-color: #08f;
+      }
 
-        @keyframes rotation {
+      .rotate {
+        animation: rotation 20s infinite linear;
+        display: block;
+        margin: auto;
+      }
+
+      @keyframes rotation {
         from {
-            transform: rotate(0deg);
+          transform: rotate(0deg);
         }
         to {
-            transform: rotate(359deg);
+          transform: rotate(359deg);
         }
-        }
-        .video-container { 
-            position: relative; 
-            padding-bottom: 56.25%; 
-            padding-top: 30px; 
-            height: 0; 
-            overflow: hidden; 
+      }
+      .video-container {
+        position: relative;
+        padding-bottom: 56.25%;
+        padding-top: 30px;
+        height: 0;
+        overflow: hidden;
+      }
+
+      .video-container iframe,
+      .video-container object,
+      .video-container embed {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+      }
+      #navbarNavAltMarkup {
+        justify-content: flex-end;
+      }
+
+      #linkedin-btn {
+        color: #db3eb1;
+        border: 2px solid #db3eb1;
+        border-radius: 15px;
+        padding: 15px;
+        font-family: tahoma;
+        letter-spacing: 2px;
+        cursor: pointer;
+        font-weight: bold;
+        filter: drop-shadow(0 0 15px #db3eb1) drop-shadow(0 0 50px #db3eb1)
+          contrast(2) brightness(2);
+        transition: 0.5s;
+        margin-right: 10px;
+        margin-bottom: 10px;
+      }
+
+      #linkedin-btn:hover {
+        color: black;
+        background-color: #db3eb1;
+        filter: drop-shadow(0 0 20px #db3eb1) contrast(2) brightness(2);
+      }
+
+      #modal-btn {
+        color: #db3eb1;
+        border: 2px solid #db3eb1;
+        border-radius: 15px;
+        padding: 15px;
+        font-family: tahoma;
+        letter-spacing: 2px;
+        cursor: pointer;
+        font-weight: bold;
+        filter: drop-shadow(0 0 15px #db3eb1) drop-shadow(0 0 50px #db3eb1)
+          contrast(2) brightness(2);
+        transition: 0.5s;
+        margin-bottom: 10px;
+      }
+
+      #modal-btn:hover {
+        color: black;
+        background-color: #db3eb1;
+        filter: drop-shadow(0 0 20px #db3eb1) contrast(2) brightness(2);
+      }
+
+      .navbar-brand {
+        animation: flicker 1.5s infinite alternate;
+        padding: 15px 50px;
+        border: 2px solid #fff;
+        border-radius: 10px;
+      }
+
+      .card {
+        box-shadow: inset 2px 5px 8px 2px rgba(250, 108, 255, 0.7);
+      }
+
+      @keyframes flicker {
+        0%,
+        19%,
+        21%,
+        23%,
+        25%,
+        54%,
+        56%,
+        100% {
+          text-shadow: -0.2rem -0.2rem 1rem #fff, 0.2rem 0.2rem 1rem #fff,
+            0 0 2rem var(--neon-text-color), 0 0 4rem var(--neon-text-color),
+            0 0 6rem var(--neon-text-color), 0 0 8rem var(--neon-text-color),
+            0 0 10rem var(--neon-text-color);
+
+          box-shadow: 0 0 0.5rem #fff, inset 0 0 0.5rem #fff,
+            0 0 1rem var(--neon-border-color),
+            inset 0 0 1rem var(--neon-border-color),
+            0 0 2rem var(--neon-border-color),
+            inset 0 0 2rem var(--neon-border-color);
         }
 
-        .video-container iframe, .video-container object, .video-container embed { 
-            position: absolute; 
-            top: 0; 
-            left: 0; 
-            width: 100%; 
-            height: 100%; 
+        20%,
+        24%,
+        55% {
+          text-shadow: none;
+          box-shadow: none;
         }
+      }
     </style>
-</head>
+  </head>
 
-<body style="background-color:azure">
-    <div>
-        <img style="max-width: 200px;" class="rotate" src=" static/dp.jpg" />
-        <div
-            style="border: 5px solid black; width: 40%; margin:15px 0px; text-align:center; border-radius: 20px; background-color:white; margin: auto;">
-            <h1> Hello I'm Sebastian </h1>
-            <p>I am a year 2 student at SMU pursuing a degree in information systems :)</p>
-            <button class="btn btn-dark mb-2" onclick="location.href='https://www.linkedin.com/in/sebastian-ong/'">
-                connect w/ me :-)
+  <body style="background-color: #151825">
+    <nav
+      class="navbar navbar-expand-lg navbar-dark"
+      style="background-color: #151825"
+    >
+      <div class="container">
+        <a class="navbar-brand" href="#">Seb</a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNavAltMarkup"
+          aria-controls="navbarNavAltMarkup"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+          <div class="navbar-nav">
+            <a class="nav-link active" aria-current="page" href="#"
+              >Introduction</a
+            >
+            <a class="nav-link" href="#learnt">Learnt</a>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <div class="container" id="learnt">
+      <div class="row gy-5" style="margin-top: 10px">
+        <div class="col">
+          <div
+            style="
+              text-align: left;
+              border-radius: 20px;
+              color: white;
+              line-height: 1.5;
+              box-shadow: inset 0px 5px 10px 0px rgba(0, 255, 255, 0.7);
+              padding: 50px 100px;
+            "
+          >
+            <h1>Hello I'm Sebastian</h1>
+            <br />
+            <p style="font-size: 20px">
+              Year 2 student at SMU pursuing a degree in information systems :)
+            </p>
+            <button
+              class="btn"
+              onclick="location.href='https://www.linkedin.com/in/sebastian-ong/'"
+              id="linkedin-btn"
+            >
+              connect w/ me
             </button>
+            <button
+              type="button"
+              class="btn"
+              data-bs-toggle="modal"
+              data-bs-target="#exampleModal"
+              id="modal-btn"
+            >
+              fav place :-)
+            </button>
+          </div>
         </div>
-        <div style="text-align:center; margin-top:10px;">
-        <iframe style="width:50%; height: 300px;" src="https://www.youtube.com/embed/hIJYIHP2vmg?autoplay=1&mute=1"
-            title="YouTube video player" frameborder="0"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-            allowfullscreen></iframe>
+        <div class="col">
+          <img style="max-width: 400px" class="rotate" src=" static/dp.jpg" />
         </div>
+      </div>
+      <div class="row gy-5" style="margin-top: 100px">
+        <h1 class="text-white">What have I learnt in WAD2?</h1>
+        <div class="col">
+          <div
+            class="card p-2 text-white"
+            style="width: 20rem; background-color: #21222f"
+          >
+            <div class="card-body">
+              <h5 class="card-title mb-4">Bootstrap</h5>
+              <p class="card-text">
+                Bootstrap is the most popular CSS Framework for developing
+                responsive and mobile-first websites!
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div
+            class="card p-2 text-white"
+            style="width: 20rem; background-color: #21222f"
+          >
+            <div class="card-body">
+              <h5 class="card-title mb-4">Vue.js</h5>
+              <p class="card-text">
+                Vue.js is a JavaScript framework for building user interfaces
+                (UIs) and single-page applications (SPAs). Just like the best of
+                them, Vue.js is open-source. It utilizes a model-view-viewmodel
+                (MVVM) architectural pattern.
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div
+            class="card p-2 text-white"
+            style="width: 20rem; background-color: #21222f"
+          >
+            <div class="card-body">
+              <h5 class="card-title mb-4">Axios</h5>
+              <p class="card-text">
+                Axios is a promised-based HTTP client for JavaScript. It has the
+                ability to make HTTP requests from the browser and handle the
+                transformation of request and response data.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8" crossorigin="anonymous"></script>
-</body>
-
+    <!-- Modal -->
+    <div
+      class="modal fade"
+      id="exampleModal"
+      tabindex="-1"
+      aria-labelledby="exampleModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog">
+        <div class="modal-content bg-dark">
+          <div class="modal-header" style="border-bottom: 1px #151825 solid">
+            <h1 class="modal-title fs-5 text-white" id="exampleModalLabel">
+              New Zealand
+            </h1>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <div style="text-align: left; margin-top: 10px">
+              <iframe
+                style="width: 100%; height: 300px"
+                src="https://www.youtube.com/embed/hIJYIHP2vmg?mute=1"
+                title="YouTube video player"
+                frameborder="0"
+                allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen
+              ></iframe>
+            </div>
+          </div>
+          <div class="modal-footer" style="border: 0px">
+            <button
+              type="button"
+              class="btn btn-secondary"
+              data-bs-dismiss="modal"
+            >
+              Close
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8"
+      crossorigin="anonymous"
+    ></script>
+  </body>
 </html>
